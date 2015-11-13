@@ -4,15 +4,18 @@
     <head>
         <title>#{get 'title' /}</title>
         <meta http-equiv="Content-Type" content="text/html; charset=${_response_encoding}"/>
-        #{stylesheet src:"main.css" /}
+        
         <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}" />
-        #{script src:"jquery-1.4.2.min.js" /}
-        #{script src:"jquery.tools-1.2.5.toolbox.expose.min.js" /}
+        #{stylesheet src:"business-casual.css" /}
+        #{stylesheet src:"bootstrap.min.css" /}
+        <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css"></link>
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"></link>
+        #{script src:"jquery.js" /}
     </head>
     <body>
 
-        <div id="header">
-            <div id="logo">
+        <div id="box">
+            <div id="brand">
                 yabe.
             </div>
             <ul id="tools">
@@ -31,11 +34,19 @@
             #{doLayout /}
         </div>
 
-        <p id="footer">
-            Yabe is a (not so) powerful blog engine built with the 
-            <a href="https://www.playframework.com">play framework</a>
-            as a tutorial application.
-        </p>
+        <div id="footer">
+            #{container}
+                #{row}
+                    <div class="col-lg-12 text-center">
+                        <p>
+                            Yabe is a (not so) powerful blog engine built with the 
+                            <a href="https://www.playframework.com">play framework</a>
+                            as a tutorial application.
+                        </p>
+                    </div>
+                #{/row}
+            #{/container}
+        </div>
 
     </body>
 </html>
